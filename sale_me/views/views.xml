@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="sale_me.list">
+            <field name="name">sale_me list</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="type_sale" string="Sale Type" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_me.form">
+            <field name="name">sale_me form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <field name="client_order_ref" position="after">
+                    <field name="type_sale" string="Sale type" />
+                </field>
+            </field>
+        </record>
+-->
+        <!-- actions opening views on models -->
+
+        <!-- server action to the one above -->
+        <!--
+    <record model="ir.actions.server" id="sale_me.action_server">
+      <field name="name">sale_me server</field>
+      <field name="model_id" ref="model_sale_me_sale_me"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+        <!-- Top menu item -->
+        <!--
+    <menuitem name="sale_me" id="sale_me.menu_root"/>
+    -->
+        <!-- menu categories -->
+        <!--
+    <menuitem name="Menu 1" id="sale_me.menu_1" parent="sale_me.menu_root"/>
+    <menuitem name="Menu 2" id="sale_me.menu_2" parent="sale_me.menu_root"/>
+    -->
+        <!-- actions -->
+        <!--
+    <menuitem name="List" id="sale_me.menu_1_list" parent="sale_me.menu_1"
+              action="sale_me.action_window"/>
+    <menuitem name="Server to list" id="sale_me" parent="sale_me.menu_2"
+              action="sale_me.action_server"/>
+    -->
+    </data>
+</odoo>
